@@ -1,6 +1,5 @@
 // components/LenisScroller.tsx
 "use client"; // if using app directory
-
 import { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
 
@@ -9,7 +8,7 @@ export default function LenisScroller({
 }: {
   children: React.ReactNode;
 }) {
-  const raf = useRef<number>();
+  const raf = useRef<number | null>(null);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -25,7 +24,9 @@ export default function LenisScroller({
     raf.current = requestAnimationFrame(update);
 
     return () => {
-      cancelAnimationFrame(raf.current!);
+      if (raf.current !== null) {
+        cancelAnimationFrame(raf.current);
+      }
     };
   }, []);
 
