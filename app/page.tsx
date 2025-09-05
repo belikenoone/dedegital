@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -6,31 +7,34 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
-  Code,
-  Phone,
-  MessageSquare,
-  Globe,
-  Users,
   ArrowRight,
   CheckCircle,
-  Star,
-  Mail,
-  MapPin,
-  Linkedin,
-  Twitter,
+  Code,
   Github,
-  Shield,
-  Clock,
-  Target,
+  Globe,
   Lightbulb,
+  Linkedin,
+  MapPin,
+  MessageSquare,
+  Phone,
   Settings,
   Smartphone,
+  Star,
+  Target,
+  Twitter,
+  Users,
+  Megaphone,
+  PenTool,
+  Search,
+  Mail,
+  TrendingUp,
+  UserCheck,
+  BarChart3,
+  Heart,
 } from "lucide-react";
 import Link from "next/link";
+import ContactForm from "@/components/ui/contact-form";
 
 export default function DigitalLabsLanding() {
   return (
@@ -44,7 +48,7 @@ export default function DigitalLabsLanding() {
                 <Code className="w-6 h-6 text-white" />
               </div>
               <span className="text-2xl font-bold text-gray-900">
-                dedigitallabs
+                De Digital Labs
               </span>
             </div>
             <nav className="hidden md:flex items-center space-x-8">
@@ -55,10 +59,10 @@ export default function DigitalLabsLanding() {
                 Services
               </Link>
               <Link
-                href="#industries"
+                href="#clients"
                 className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
               >
-                Industries
+                Clients
               </Link>
               <Link
                 href="#about"
@@ -87,108 +91,65 @@ export default function DigitalLabsLanding() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <Badge
-                  variant="secondary"
-                  className="bg-blue-100 text-blue-700 px-4 py-2 text-sm font-medium"
-                >
-                  Professional Software Development
-                </Badge>
-                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Custom Software
-                  <span className="block text-blue-600">Solutions with</span>
-                  <span className="block text-gray-700">AI Integration</span>
-                </h1>
-                <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
-                  We develop professional software solutions integrated with AI
-                  calling agents and intelligent chatbots to streamline your
-                  business operations and enhance customer engagement.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
-                >
-                  <Link href="#contact" className="flex items-center">
-                    Start Your Project
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 bg-transparent"
-                >
-                  <Link href="#services">View Services</Link>
-                </Button>
-              </div>
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900">100+</div>
-                  <div className="text-sm text-gray-600 mt-1">
-                    Projects Delivered
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900">98%</div>
-                  <div className="text-sm text-gray-600 mt-1">
-                    Client Satisfaction
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900">24/7</div>
-                  <div className="text-sm text-gray-600 mt-1">Support</div>
-                </div>
-              </div>
+          <div className="text-center space-y-8 max-w-4xl mx-auto">
+            <Badge
+              variant="outline"
+              className="bg-blue-100 text-blue-700 px-6 py-2 text-sm font-medium"
+            >
+              We Help Brands Grow & Scale
+            </Badge>
+            <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+              Transform Your
+              <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Brand's Digital
+              </span>
+              <span className="block text-gray-700">Presence</span>
+            </h1>
+            <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              From custom software and AI integration to comprehensive branding,
+              digital marketing, and strategic growth solutions - we're your
+              complete digital transformation partner.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Button
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg"
+              >
+                <Link href="#contact" className="flex items-center">
+                  Start Your Journey
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg bg-transparent"
+              >
+                <Link href="#services">Explore Services</Link>
+              </Button>
             </div>
-            <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <Code className="w-6 h-6 text-blue-600" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900">
-                        Custom Software
-                      </h3>
-                      <p className="text-gray-600 text-sm">
-                        Tailored solutions for your business
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                      <Phone className="w-6 h-6 text-green-600" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900">
-                        AI Calling Agents
-                      </h3>
-                      <p className="text-gray-600 text-sm">
-                        Intelligent voice automation
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <MessageSquare className="w-6 h-6 text-purple-600" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900">
-                        AI Chatbots
-                      </h3>
-                      <p className="text-gray-600 text-sm">
-                        Smart customer support
-                      </p>
-                    </div>
-                  </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gray-200">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-900">500+</div>
+                <div className="text-sm text-gray-600 mt-1">
+                  Projects Delivered
                 </div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-900">150+</div>
+                <div className="text-sm text-gray-600 mt-1">Happy Clients</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-900">98%</div>
+                <div className="text-sm text-gray-600 mt-1">
+                  Client Retention
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-900">24/7</div>
+                <div className="text-sm text-gray-600 mt-1">Support</div>
               </div>
             </div>
           </div>
@@ -206,15 +167,16 @@ export default function DigitalLabsLanding() {
               Our Services
             </Badge>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-              Professional Software Development
+              Complete Digital Solutions
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We specialize in creating custom software solutions with
-              integrated AI capabilities to enhance your business operations
+              From software development to brand strategy and growth marketing -
+              we provide end-to-end solutions for modern businesses
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Software Development */}
             <Card className="border-gray-200 hover:shadow-lg transition-all duration-300 bg-white">
               <CardHeader className="pb-4">
                 <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
@@ -225,7 +187,7 @@ export default function DigitalLabsLanding() {
                 </CardTitle>
                 <CardDescription className="text-gray-600">
                   Custom web applications and websites built with modern
-                  technologies and best practices
+                  technologies
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -255,8 +217,8 @@ export default function DigitalLabsLanding() {
                   AI Calling Agents
                 </CardTitle>
                 <CardDescription className="text-gray-600">
-                  Intelligent voice agents that handle customer calls,
-                  appointments, and sales conversations
+                  Intelligent voice agents for customer service and sales
+                  automation
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -286,8 +248,7 @@ export default function DigitalLabsLanding() {
                   AI Chatbots
                 </CardTitle>
                 <CardDescription className="text-gray-600">
-                  Smart chatbots that provide instant customer support and
-                  automate routine inquiries
+                  Smart chatbots for instant customer support and engagement
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -317,8 +278,7 @@ export default function DigitalLabsLanding() {
                   Mobile Applications
                 </CardTitle>
                 <CardDescription className="text-gray-600">
-                  Native and cross-platform mobile apps for iOS and Android with
-                  seamless user experience
+                  Native and cross-platform mobile apps for iOS and Android
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -341,30 +301,121 @@ export default function DigitalLabsLanding() {
 
             <Card className="border-gray-200 hover:shadow-lg transition-all duration-300 bg-white">
               <CardHeader className="pb-4">
-                <div className="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-4">
-                  <Users className="w-7 h-7 text-teal-600" />
+                <div className="w-14 h-14 bg-rose-100 rounded-xl flex items-center justify-center mb-4">
+                  <PenTool className="w-7 h-7 text-rose-600" />
                 </div>
                 <CardTitle className="text-gray-900 text-xl">
-                  CRM Solutions
+                  Branding & Identity
                 </CardTitle>
                 <CardDescription className="text-gray-600">
-                  Customer relationship management systems to streamline your
-                  sales and customer service
+                  Complete brand strategy, visual identity, and brand guidelines
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 text-sm text-gray-600">
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
-                    Lead Management
+                    Brand Strategy
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
-                    Sales Pipeline
+                    Logo Design
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
-                    Analytics Dashboard
+                    Brand Guidelines
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-gray-200 hover:shadow-lg transition-all duration-300 bg-white">
+              <CardHeader className="pb-4">
+                <div className="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+                  <Megaphone className="w-7 h-7 text-amber-600" />
+                </div>
+                <CardTitle className="text-gray-900 text-xl">
+                  Digital Marketing
+                </CardTitle>
+                <CardDescription className="text-gray-600">
+                  Performance marketing across paid, organic, and social
+                  channels
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-sm text-gray-600">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Paid Campaigns
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Social Media
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Email Marketing
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-gray-200 hover:shadow-lg transition-all duration-300 bg-white">
+              <CardHeader className="pb-4">
+                <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
+                  <Search className="w-7 h-7 text-emerald-600" />
+                </div>
+                <CardTitle className="text-gray-900 text-xl">
+                  SEO & Content
+                </CardTitle>
+                <CardDescription className="text-gray-600">
+                  Technical SEO, content strategy, and organic growth
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-sm text-gray-600">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Technical SEO
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Content Strategy
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Analytics & Reporting
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-gray-200 hover:shadow-lg transition-all duration-300 bg-white">
+              <CardHeader className="pb-4">
+                <div className="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-4">
+                  <UserCheck className="w-7 h-7 text-teal-600" />
+                </div>
+                <CardTitle className="text-gray-900 text-xl">
+                  Staffing Solutions
+                </CardTitle>
+                <CardDescription className="text-gray-600">
+                  Talent acquisition and staffing services for growing
+                  businesses
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-sm text-gray-600">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Talent Sourcing
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Screening & Interviews
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Contract & Permanent
                   </li>
                 </ul>
               </CardContent>
@@ -373,21 +424,81 @@ export default function DigitalLabsLanding() {
             <Card className="border-gray-200 hover:shadow-lg transition-all duration-300 bg-white">
               <CardHeader className="pb-4">
                 <div className="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
-                  <Settings className="w-7 h-7 text-indigo-600" />
+                  <BarChart3 className="w-7 h-7 text-indigo-600" />
                 </div>
                 <CardTitle className="text-gray-900 text-xl">
-                  Custom Software
+                  Market Research
                 </CardTitle>
                 <CardDescription className="text-gray-600">
-                  Tailored software solutions designed specifically for your
-                  business requirements and workflows
+                  Data-driven insights and market analysis for strategic
+                  decisions
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 text-sm text-gray-600">
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
-                    Custom Features
+                    Market Analysis
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Consumer Insights
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Competitive Research
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-gray-200 hover:shadow-lg transition-all duration-300 bg-white">
+              <CardHeader className="pb-4">
+                <div className="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center mb-4">
+                  <Heart className="w-7 h-7 text-pink-600" />
+                </div>
+                <CardTitle className="text-gray-900 text-xl">
+                  Influencer Marketing
+                </CardTitle>
+                <CardDescription className="text-gray-600">
+                  Strategic influencer partnerships and campaign management
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-sm text-gray-600">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Influencer Sourcing
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Campaign Management
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Performance Tracking
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-gray-200 hover:shadow-lg transition-all duration-300 bg-white">
+              <CardHeader className="pb-4">
+                <div className="w-14 h-14 bg-violet-100 rounded-xl flex items-center justify-center mb-4">
+                  <Settings className="w-7 h-7 text-violet-600" />
+                </div>
+                <CardTitle className="text-gray-900 text-xl">
+                  Custom Software
+                </CardTitle>
+                <CardDescription className="text-gray-600">
+                  Tailored software solutions for unique business requirements
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-sm text-gray-600">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
+                    Custom Development
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-3" />
@@ -404,66 +515,43 @@ export default function DigitalLabsLanding() {
         </div>
       </section>
 
-      {/* Industries Section */}
-      <section id="industries" className="py-20 bg-gray-50">
+      {/* Clients Section */}
+      <section id="clients" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16">
             <Badge
               variant="secondary"
               className="bg-gray-200 text-gray-700 px-4 py-2"
             >
-              Industries We Serve
+              Trusted Partners
             </Badge>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-              Trusted Across Industries
+              Brands That Trust Us
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We deliver software solutions tailored to the unique needs of
-              various industries
+              We've had the privilege of working with industry leaders and
+              innovative companies
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
             {[
-              {
-                name: "E-commerce",
-                description: "Online stores and marketplaces",
-              },
-              {
-                name: "Healthcare",
-                description: "Medical practice management",
-              },
-              { name: "Education", description: "Learning management systems" },
-              {
-                name: "Real Estate",
-                description: "Property management platforms",
-              },
-              {
-                name: "Finance",
-                description: "Financial service applications",
-              },
-              {
-                name: "Manufacturing",
-                description: "Production management systems",
-              },
-              { name: "Retail", description: "Point of sale and inventory" },
-              {
-                name: "Hospitality",
-                description: "Booking and management systems",
-              },
-            ].map((industry, index) => (
+              "Symmetrical Global",
+              "IGR Reality",
+              "Kent",
+              "Microsoft",
+              "HP",
+              "Trivedi Pharma",
+              "Natraj Events",
+              "Sunhygen Solar",
+            ].map((client, index) => (
               <Card
                 key={index}
-                className="border-gray-200 hover:shadow-md transition-all duration-300 text-center bg-white"
+                className="border-gray-200 hover:shadow-md transition-all duration-300 text-center bg-white p-6"
               >
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-lg text-gray-900">
-                    {industry.name}
-                  </CardTitle>
-                  <CardDescription className="text-gray-600">
-                    {industry.description}
-                  </CardDescription>
-                </CardHeader>
+                <div className="text-lg font-semibold text-gray-900">
+                  {client}
+                </div>
               </Card>
             ))}
           </div>
@@ -479,35 +567,33 @@ export default function DigitalLabsLanding() {
                 variant="secondary"
                 className="bg-blue-100 text-blue-700 px-4 py-2"
               >
-                About dedigitallabs
+                About De Digital Labs
               </Badge>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                Professional Software Development with AI Integration
+                Your Complete Digital Transformation Partner
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                dedigitallabs is a professional software development company
-                specializing in custom solutions integrated with AI
-                technologies. We focus on creating robust, scalable software
-                that incorporates AI calling agents and intelligent chatbots to
-                enhance business operations.
+                dedigitallabs is a full-service digital agency that combines
+                technical expertise with creative strategy. We specialize in
+                software development, AI integration, branding, digital
+                marketing, and comprehensive business growth solutions.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our team of experienced developers and AI specialists work
-                together to deliver solutions that not only meet your current
-                needs but also prepare your business for the future of
-                technology.
+                From startups to enterprise clients, we've helped hundreds of
+                brands transform their digital presence and achieve measurable
+                growth through innovative technology and strategic marketing.
               </p>
               <div className="grid grid-cols-2 gap-8 pt-6">
                 <div className="text-center p-6 bg-gray-50 rounded-lg">
-                  <div className="text-3xl font-bold text-gray-900">5+</div>
+                  <div className="text-3xl font-bold text-gray-900">7+</div>
                   <div className="text-gray-600 mt-1">Years Experience</div>
                 </div>
                 <div className="text-center p-6 bg-gray-50 rounded-lg">
-                  <div className="text-3xl font-bold text-gray-900">50+</div>
+                  <div className="text-3xl font-bold text-gray-900">150+</div>
                   <div className="text-gray-600 mt-1">Happy Clients</div>
                 </div>
                 <div className="text-center p-6 bg-gray-50 rounded-lg">
-                  <div className="text-3xl font-bold text-gray-900">100+</div>
+                  <div className="text-3xl font-bold text-gray-900">500+</div>
                   <div className="text-gray-600 mt-1">Projects Completed</div>
                 </div>
                 <div className="text-center p-6 bg-gray-50 rounded-lg">
@@ -520,39 +606,39 @@ export default function DigitalLabsLanding() {
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-gray-200">
                 <div className="space-y-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                    Why Choose Us?
+                    Why Choose De Digital Labs?
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
                       <Target className="w-5 h-5 text-blue-600 mt-1" />
                       <div>
                         <h4 className="font-medium text-gray-900">
-                          Custom Solutions
+                          End-to-End Solutions
                         </h4>
                         <p className="text-gray-600 text-sm">
-                          Tailored software built for your specific needs
+                          From strategy to execution, we handle everything
                         </p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
-                      <Shield className="w-5 h-5 text-green-600 mt-1" />
+                      <TrendingUp className="w-5 h-5 text-green-600 mt-1" />
                       <div>
                         <h4 className="font-medium text-gray-900">
-                          Reliable & Secure
+                          Proven Results
                         </h4>
                         <p className="text-gray-600 text-sm">
-                          Enterprise-grade security and reliability
+                          Track record of delivering measurable growth
                         </p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
-                      <Clock className="w-5 h-5 text-purple-600 mt-1" />
+                      <Users className="w-5 h-5 text-purple-600 mt-1" />
                       <div>
                         <h4 className="font-medium text-gray-900">
-                          Timely Delivery
+                          Expert Team
                         </h4>
                         <p className="text-gray-600 text-sm">
-                          Projects delivered on time and within budget
+                          Skilled professionals across all disciplines
                         </p>
                       </div>
                     </div>
@@ -572,14 +658,14 @@ export default function DigitalLabsLanding() {
               variant="secondary"
               className="bg-gray-200 text-gray-700 px-4 py-2"
             >
-              Client Testimonials
+              Client Success Stories
             </Badge>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
               What Our Clients Say
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Hear from businesses that have transformed their operations with
-              our software solutions
+              Hear from businesses that have transformed their digital presence
+              with our solutions
             </p>
           </div>
 
@@ -587,44 +673,44 @@ export default function DigitalLabsLanding() {
             {[
               {
                 name: "Rajesh Kumar",
-                role: "CEO, TechStart Solutions",
+                role: "CEO, Symmetrical Global",
                 content:
-                  "dedigitallabs developed a comprehensive CRM system for us with integrated AI chatbot. The solution has improved our customer response time by 70%.",
+                  "dedigitallabs transformed our entire digital strategy. From rebranding to AI integration, they delivered exceptional results that increased our market presence by 200%.",
                 rating: 5,
               },
               {
                 name: "Priya Sharma",
-                role: "Operations Manager, RetailPro",
+                role: "Marketing Director, Kent",
                 content:
-                  "The AI calling agent they built for our customer service has been a game-changer. It handles 80% of our inquiries automatically with high accuracy.",
+                  "Their influencer marketing campaigns and SEO strategies helped us reach new audiences. Our online engagement increased by 150% within 6 months.",
                 rating: 5,
               },
               {
                 name: "Amit Patel",
-                role: "Founder, EduTech India",
+                role: "Founder, IGR Reality",
                 content:
-                  "Professional team that delivered our e-learning platform on time. The custom features they built perfectly match our requirements.",
+                  "The custom CRM and AI chatbot they built streamlined our operations. Customer response time improved by 80% and lead conversion doubled.",
                 rating: 5,
               },
               {
                 name: "Sneha Gupta",
-                role: "Director, HealthCare Plus",
+                role: "Operations Manager, Trivedi Pharma",
                 content:
-                  "Their patient management system with AI chatbot has streamlined our operations significantly. Excellent support and maintenance.",
+                  "Professional team that understood our pharmaceutical industry needs. The compliance-ready software and digital marketing exceeded expectations.",
                 rating: 5,
               },
               {
                 name: "Vikash Singh",
-                role: "Manager, LogiFlow",
+                role: "Director, Sunhygen Solar",
                 content:
-                  "The inventory management software they developed has reduced our operational costs by 30%. Highly recommend their services.",
+                  "From brand identity to lead generation systems, dedigitallabs helped us establish a strong market presence in the renewable energy sector.",
                 rating: 5,
               },
               {
                 name: "Neha Agarwal",
-                role: "Co-founder, StartupHub",
+                role: "Event Manager, Natraj Events",
                 content:
-                  "From concept to deployment, dedigitallabs provided excellent service. The web application they built exceeded our expectations.",
+                  "Their event management software and social media marketing strategies helped us scale our business and improve client satisfaction significantly.",
                 rating: 5,
               },
             ].map((testimonial, index) => (
@@ -667,14 +753,14 @@ export default function DigitalLabsLanding() {
               className="bg-blue-100 text-blue-700 px-4 py-2"
             >
               <Lightbulb className="w-4 h-4 mr-2" />
-              Get In Touch
+              Let's Connect
             </Badge>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-              Ready to Start Your Project?
+              Ready to Transform Your Brand?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Let's discuss how we can help you build the perfect software
-              solution for your business
+              Let's discuss how we can help you achieve your digital
+              transformation goals and drive measurable growth
             </p>
           </div>
 
@@ -682,12 +768,12 @@ export default function DigitalLabsLanding() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Let's Work Together
+                  Let's Build Something Amazing Together
                 </h3>
                 <p className="text-gray-600 mb-8 leading-relaxed">
-                  Our team is ready to understand your requirements and deliver
-                  a solution that drives your business forward. Contact us today
-                  for a free consultation.
+                  Our team is ready to understand your vision and deliver
+                  solutions that drive real business results. Contact us today
+                  for a free consultation and strategy session.
                 </p>
               </div>
 
@@ -736,118 +822,26 @@ export default function DigitalLabsLanding() {
                   Our Expertise
                 </h4>
                 <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Web Development
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Mobile Apps
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    AI Calling Agents
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    AI Chatbots
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    CRM Solutions
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Custom Software
-                  </div>
+                  {[
+                    "Software Development",
+                    "AI Integration",
+                    "Branding & Identity",
+                    "Digital Marketing",
+                    "SEO & Content",
+                    "Influencer Marketing",
+                    "Market Research",
+                    "Staffing Solutions",
+                  ].map((item) => (
+                    <div className="flex items-center" key={item}>
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      {item}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
 
-            <Card className="border-gray-200 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-gray-900 text-xl">
-                  Send us a Message
-                </CardTitle>
-                <CardDescription className="text-gray-600">
-                  Fill out the form below and we'll get back to you within 24
-                  hours
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-medium text-gray-700 mb-2 block">
-                      First Name *
-                    </label>
-                    <Input
-                      placeholder="John"
-                      className="border-gray-300 focus:border-blue-500"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-700 mb-2 block">
-                      Last Name *
-                    </label>
-                    <Input
-                      placeholder="Doe"
-                      className="border-gray-300 focus:border-blue-500"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">
-                    Email Address *
-                  </label>
-                  <Input
-                    type="email"
-                    placeholder="john@company.com"
-                    className="border-gray-300 focus:border-blue-500"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">
-                    Phone Number
-                  </label>
-                  <Input
-                    type="tel"
-                    placeholder="+91 9876543210"
-                    className="border-gray-300 focus:border-blue-500"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">
-                    Service Required *
-                  </label>
-                  <select className="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none">
-                    <option value="">Select a service</option>
-                    <option>Web Development</option>
-                    <option>Mobile App Development</option>
-                    <option>AI Calling Agents</option>
-                    <option>AI Chatbots</option>
-                    <option>CRM Solutions</option>
-                    <option>Custom Software</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">
-                    Project Details *
-                  </label>
-                  <Textarea
-                    placeholder="Please describe your project requirements, timeline, and any specific features you need..."
-                    className="border-gray-300 focus:border-blue-500 min-h-[120px]"
-                  />
-                </div>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3">
-                  Send Message
-                </Button>
-                <p className="text-xs text-gray-500 text-center">
-                  By submitting this form, you agree to our privacy policy and
-                  terms of service.
-                </p>
-              </CardContent>
-            </Card>
+            <ContactForm />
           </div>
         </div>
       </section>
@@ -861,11 +855,11 @@ export default function DigitalLabsLanding() {
                 <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
                   <Code className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-2xl font-bold">dedigitallabs</span>
+                <span className="text-2xl font-bold">De Digital Labs</span>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Professional software development company specializing in custom
-                solutions with AI integration.
+                Your complete digital transformation partner. From software
+                development to brand strategy and growth marketing.
               </p>
               <div className="flex space-x-4">
                 <Link
@@ -892,38 +886,26 @@ export default function DigitalLabsLanding() {
             <div>
               <h4 className="font-semibold mb-4 text-white">Services</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>
-                  <Link
-                    href="#services"
-                    className="hover:text-white transition-colors"
-                  >
-                    Web Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#services"
-                    className="hover:text-white transition-colors"
-                  >
-                    AI Calling Agents
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#services"
-                    className="hover:text-white transition-colors"
-                  >
-                    AI Chatbots
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#services"
-                    className="hover:text-white transition-colors"
-                  >
-                    Custom Software
-                  </Link>
-                </li>
+                {[
+                  "Web Development",
+                  "AI Integration",
+                  "Mobile Apps",
+                  "Branding & Identity",
+                  "Digital Marketing",
+                  "SEO & Content",
+                  "Influencer Marketing",
+                  "Market Research",
+                  "Staffing Solutions",
+                ].map((service) => (
+                  <li key={service}>
+                    <Link
+                      href="#services"
+                      className="hover:text-white transition-colors"
+                    >
+                      {service}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -936,6 +918,14 @@ export default function DigitalLabsLanding() {
                     className="hover:text-white transition-colors"
                   >
                     About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#clients"
+                    className="hover:text-white transition-colors"
+                  >
+                    Our Clients
                   </Link>
                 </li>
                 <li>
@@ -954,44 +944,53 @@ export default function DigitalLabsLanding() {
                     Contact
                   </Link>
                 </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Privacy Policy
-                  </Link>
-                </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-white">Contact Info</h4>
-              <div className="space-y-3 text-gray-400">
-                <div>
-                  <div className="font-medium text-white">Email</div>
-                  <div>hello@dedigitallabs.com</div>
-                </div>
-                <div>
-                  <div className="font-medium text-white">Phone</div>
-                  <div>+91 9582179766</div>
-                </div>
-                <div>
-                  <div className="font-medium text-white">Address</div>
-                  <div className="text-sm leading-relaxed">
-                    Office No. 104 First Floor, D-Mall,
-                    <br />
-                    Pitampura, New Delhi - 110034
-                  </div>
-                </div>
-              </div>
+              <h4 className="font-semibold mb-4 text-white">Legal</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <Link
+                    href="/privacy-policy"
+                    className="hover:text-white transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/refund-policy"
+                    className="hover:text-white transition-colors"
+                  >
+                    Refund Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white transition-colors">
+                    Terms of Service
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#contact"
+                    className="hover:text-white transition-colors"
+                  >
+                    Support
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
 
           <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 text-sm">
-                © {new Date().getFullYear()} dedigitallabs. All rights reserved.
+                © {new Date().getFullYear()} De Digital Labs. All rights
+                reserved.
               </p>
               <p className="text-gray-400 text-sm mt-2 md:mt-0">
-                Professional Software Development Services
+                Transforming brands through technology and strategy
               </p>
             </div>
           </div>
