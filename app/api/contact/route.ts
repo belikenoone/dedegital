@@ -4,6 +4,7 @@ import { type NextRequest, NextResponse } from "next/server";
 function isValidEmail(email: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
+  // Hello
 }
 
 export async function POST(request: NextRequest) {
